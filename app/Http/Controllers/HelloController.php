@@ -3,37 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-global $head, $style, $body, $end;
-$head = '<html><head>';
-$style = <<<EOF
-<style>
-body {font-size:16pt;}
-h1 { font-size:100pt;}
-</style>
-EOF;
-$body = '</head><body>';
-$end = '</body></html>';
-
-function tag($tag, $txt)
-{
-    return "<{$tag}>" . $txt . "</{$tag}>";
-}
+use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
-    public function index()
+    public function index(Request $request, Response $response)
     {
-        global $head, $style, $body, $end;
+        $html = <<<EOF
+<html>
+<title>Hello</title>
+<style>
+body {font-size:16pt;}
+h1 {font-size:30pt;}
+</style>
+<bpdy>
+<h1>リクエストとレスポンス</h1>
+<h3>Request</h3>
+<pre>{$request}</pre>
+<h3>Response</h3>
+<pre>Response</pre>
+</body>
 
-        $html = $head . tag('title', 'Hello/Index') . $style . $body
-            . tag('h1', 'Index') . tag('p', 'this is Index page')
-            . '<a href="/hello/other">go to </a>'
-            . $end;
-        return $html;
+</html>
+EOF;
+        $response->setContent($html);
+        return $response;
     }
 
-    public function other()
+    /*public function other()
     {
         global $head, $style, $body, $end;
 
@@ -41,5 +38,5 @@ class HelloController extends Controller
             . tag('h1', 'Other') . tag('p', 'aaaaaaa')
             . $end;
         return $html;
-    }
+    }*/
 }
