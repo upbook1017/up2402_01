@@ -9,7 +9,7 @@ class HelloController extends Controller
 {
     public function index()
     {
-        $data = ['msg' => 'これはコントローラーから渡された値'];
+        $data = ['msg' => 'これはBladeを利用した値'];
         return view('hello.index', $data);
     }
 }
