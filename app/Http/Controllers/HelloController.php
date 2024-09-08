@@ -9,11 +9,7 @@ class HelloController extends Controller
 {
     public function index()
     {
-        return view('hello.index', ['abc' => '']);
-    }
-
-    public function post(Request $request)
-    {
-        return view('hello.index', ['abc' => $request->msg]);
+        $data = ['1', '2', '3', '4', '5'];
+        return view('hello.index', ['data' => $data]);
     }
 }
