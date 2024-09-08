@@ -15,8 +15,8 @@
 
 <body>
     <h1>Blade/Index</h1>
-    @if ($msg != '')
-        <p>こんにちは、{{ $msg }}さん。</p>
+    @if ($abc != '')
+        <p>こんにちは、{{ $abc }}さん。</p>
     @else
         <p>何か書いてください。</p>
     @endif
