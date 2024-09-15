@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>@yeld('title')</title>
+    <title>@yield('title')</title>
     <style>
         body {
             font-size: 16pt;
@@ -34,7 +34,7 @@
 </head>
 
 <body>
-    <h1>@yeld('title')</h1>
+    <h1>@yield('title')</h1>
     @section('menubar')
         <h2 class="menutitle">※メニュー</h2>
         <ul>
@@ -43,10 +43,10 @@
     </ul>
     <hr size="1">
     <div class="content">
-        @yeld('content')
+        @yield('content')
     </div>
     <div class="footer">
-        @yeld('footer')
+        @yield('footer')
     </div>
 </body>
 
