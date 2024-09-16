@@ -9,7 +9,14 @@
 
 @section('content')
     <p>ここが本文のコンテンツです。</p>
-    <p>必要なだけ記述できます。</p>
+    <table>
+        @foreach ($data as $item)
+            <tr>
+                <th>{{ $item['name'] }}</th>
+                <td>{{ $item['mail'] }}</td>
+        @endforeach
+        </tr>
+    </table>
 @endsection
 
 @section('footer')
