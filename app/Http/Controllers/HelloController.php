@@ -18,7 +18,7 @@ class HelloController extends Controller
             'mail' => 'email',
             'age' => 'numeric|between:0,150',
         ];
-        $this->validate($request, $validate_rule);
+        $validatedData = $request->validate($validate_rule);
         return view('hello.index', ['msg' => '正しく入力されました！']);
     }
 }
