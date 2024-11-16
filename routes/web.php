@@ -27,5 +27,6 @@ Route::post('hello', 'App\Http\Controllers\HelloController@post');
 /*Route::get('hello', function () {
     return view('hello.index'); });*/
 Route::get('person', 'App\Http\Controllers\PersonController@index');
-
+Route::get('person/find', 'App\Http\Controllers\PersonController@find');
+Route::post('person/find', 'App\Http\Controllers\PersonController@search');
 require __DIR__ . '/auth.php';
