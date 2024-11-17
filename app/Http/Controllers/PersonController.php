@@ -31,7 +31,7 @@ class PersonController extends Controller
 
     public function create(Request $request)
     {
-        $validateData = $request->validate( Person::$rules);
+        $request->validate(Person::$rules);//リスト6-20よりエラーになるので34行少し変更
         $person = new Person;
         $form = $request->all();
         unset($form['__token']);

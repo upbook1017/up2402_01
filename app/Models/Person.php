@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 class Person extends Model
 {
     use HasFactory;
-    public $timestamps = false;
+    public $timestamps = false;//デフォルトにないのでタイムスタンプは無効化にする。
     protected $guarded = array('id');
     public static $rules = array(
         'name' => 'required',
