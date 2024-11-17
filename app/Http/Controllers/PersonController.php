@@ -24,4 +24,18 @@ class PersonController extends Controller
         $param = ['input' => $request->input, 'item' => $item];
         return view('person.find', $param);
     }
+    public function add(Request $request)
+    {
+        return view('person.add');
+    }
+
+    public function create(Request $request)
+    {
+        $validateData = $request->validate( Person::$rules);
+        $person = new Person;
+        $form = $request->all();
+        unset($form['__token']);
+        $person->fill($form)->save();
+        return redirect('/person');
+    }
 }
