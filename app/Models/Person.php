@@ -44,4 +44,9 @@ class Person extends Model
             $builder->where('age', '>', 20);
         });
     }
+
+    public function board()
+    {
+        return $this->hasOne('App\Models\board');
+    }
 }
