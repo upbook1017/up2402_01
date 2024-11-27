@@ -45,8 +45,13 @@ class Person extends Model
         });
     }
 
-    public function board()
+    /*public function board()
     {
         return $this->hasOne('App\Models\board');
+    }*///hasOne結合のコード
+
+    public function boards()
+    {
+        return $this->hasMany('App\Models\board');
     }
 }
