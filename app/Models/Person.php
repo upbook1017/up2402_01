@@ -22,7 +22,7 @@ class Person extends Model
         return $this->id . ': ' . $this->name . '(' . $this->age . ')' . $this->aaaa;
     }
 
-    public function scopeNameEqual($query, $str)
+    /*public function scopeNameEqual($query, $str)///バリデーション処理コードがあるとエラーになるのでコメントアウトする(board.phpで出力するため)
     {
         return $query->where('name', $str);
     }
