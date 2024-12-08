@@ -12,6 +12,13 @@ class PersonController extends Controller
         $items = Person::all();
         return view('person.index', ['items' => $items]);
     }
+
+    public function show($id)//showアクション(アドレスにid入力で表示)
+    {
+        $items = Person::find($id);
+        return view('person.show')->with('items', $items);
+    }
+
     public function find(Request $request)
     {
         return view('person.find', ['input' => '']);

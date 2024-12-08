@@ -14,6 +14,12 @@ class BoardController extends Controller
         return view('board.index', ['items' => $items]);
     }
 
+    public function show($id)//showアクション(アドレスにid入力で表示)
+    {
+        $items = Board::find($id);
+        return view('board.show')->with('items', $items);
+    }
+
     public function add(Request $request)
     {
         return view('board.add');
