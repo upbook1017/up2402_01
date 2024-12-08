@@ -52,6 +52,6 @@ class Person extends Model
 
     public function boards()
     {
-        return $this->hasMany('App\Models\board');
+        return $this->hasMany('App\Models\Board');
     }
 }
