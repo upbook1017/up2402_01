@@ -26,6 +26,17 @@
         </tr>
         @endforeach
     </table>
+
+    <table>
+        <tr>
+            <th>getDataで表示</th>
+        </tr>
+        @foreach ($boards as $board)
+            <tr>
+                <td>{{ $board->getData() }}</td>
+            </tr>
+        @endforeach
+    </table>
 @endsection
 
 @section('footer')
