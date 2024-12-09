@@ -19,11 +19,11 @@
 
     <table>
         @foreach ($boards as $board)
-        <tr>
-            <th>{{ $board->id }}</th>
-            <th>{{ $board->title }}</th>
-            <th>{{ $board->message }}</th>
-        </tr>
+            <tr>
+                <th>{{ $board->id }}</th>
+                <th>{{ $board->title }}</th>
+                <th>{{ $board->message }}</th>
+            </tr>
         @endforeach
     </table>
 
