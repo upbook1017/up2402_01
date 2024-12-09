@@ -31,7 +31,7 @@ Route::get('person/find', 'App\Http\Controllers\PersonController@find');
 Route::post('person/find', 'App\Http\Controllers\PersonController@search');
 Route::get('person/add', 'App\Http\Controllers\PersonController@add');
 Route::post('person/add', 'App\Http\Controllers\PersonController@create');
-Route::get('person/show/{item}', 'App\Http\Controllers\PersonController@show');//showアクション(アドレスにid入力で表示)
+Route::get('person/show/{person}', 'App\Http\Controllers\PersonController@show');//showアクション(アドレスにid入力で表示)
 Route::get('board', 'App\Http\Controllers\BoardController@index');
 Route::get('board/add', 'App\Http\Controllers\BoardController@add');
 Route::post('board/add', 'App\Http\Controllers\BoardController@create');
