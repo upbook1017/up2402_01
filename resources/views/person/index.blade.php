@@ -17,7 +17,7 @@
         </tr>
         @foreach ($items as $item)
             <tr>
-                <td>{{ $item->name }}</td>
+                <td><a href="{{route('person.show' , $item)}}">{{ $item->name }}</a></td>
                 <td>{{ $item->mail }}</td>
                 <td>{{ $item->age }}</td>
                 <td>{{ $item->aaaa }}</td>
