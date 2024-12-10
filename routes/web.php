@@ -35,6 +35,7 @@ Route::get('person/show/{person}', 'App\Http\Controllers\PersonController@show')
 Route::get('board', 'App\Http\Controllers\BoardController@index');
 Route::get('board/add', 'App\Http\Controllers\BoardController@add');
 Route::post('board/add', 'App\Http\Controllers\BoardController@create');
+Route::post('person/show/{person}', 'App\Http\Controllers\BoardController@create')->name('person.show');///////
 Route::get('board/show/{item}', 'App\Http\Controllers\BoardController@show');//showアクション(アドレスにid入力で表示)
 
 require __DIR__ . '/auth.php';

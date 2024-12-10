@@ -37,6 +37,28 @@
             </tr>
         @endforeach
     </table>
+
+    <form action="{{ route('person.show', $board)}}" method="post">
+        @csrf
+        <input type="hidden" name="person_id" value="{{ $person->id}}">
+
+        <table>
+            <tr>
+                <th>title: </th>
+                <td><input type="text" name="title" value="{{ old('title') }}"></td>
+            </tr>
+
+            <tr>
+                <th>message: </th>
+                <td><input type="text" name="message" value="{{ old('message') }}"></td>
+            </tr>
+
+            <tr>
+                <th></th>
+                <td><input type="submit" value="send"></td>
+            </tr>
+        </table>
+    </form>
 @endsection
 
 @section('footer')
