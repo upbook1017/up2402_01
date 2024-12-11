@@ -38,9 +38,9 @@
         @endforeach
     </table>
 
-    <form action="{{ route('person.show', $board)}}" method="post">
+    <form action="{{ route('person.show', $board) }}" method="post">
         @csrf
-        <input type="hidden" name="person_id" value="{{ $person->id}}">
+        <input type="hidden" name="person_id" value="{{ $person->id }}">
 
         <table>
             <tr>

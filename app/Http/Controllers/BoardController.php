@@ -25,7 +25,7 @@ class BoardController extends Controller
         return view('board.add');
     }
 
-    /*public function create(Request $request)
+    public function createadd(Request $request)
     {
         $request->validate(Board::$rules);
         $board = new Board;
@@ -33,7 +33,7 @@ class BoardController extends Controller
         unset($form['_token']);
         $board->fill($form)->save();
         return redirect('/board');
-    }*//////修正する/データベースも
+    }
 
     public function create(Request $request)
     {
@@ -43,6 +43,6 @@ class BoardController extends Controller
         unset($form['_token']);
         $board->fill($form)->save();
         $person_id = $form['person_id'];///////
-        return redirect()->route('person.show' , ['person' => $person_id ]);/////
+        return redirect()->route('person.show', ['person' => $person_id]);/////
     }
 }
