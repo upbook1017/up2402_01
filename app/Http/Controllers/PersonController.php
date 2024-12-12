@@ -45,4 +45,24 @@ class PersonController extends Controller
         $person->fill($form)->save();
         return redirect('/person');
     }
+
+    public function add2(Request $request)
+    {
+        return view('person.add2');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate(Person::$rules);
+        $person = new Person;
+        $form = $request->all();
+        $person->fill($form)->save();
+
+        if (isset($form['boards'])){
+            $board = $form['boards'];
+                $person->boards()->create($board);
+        }
+        /*$person_id = $form['person_id'];*/
+        return redirect()->route('person.show', ['id' => $person->id]);
+    }
 }

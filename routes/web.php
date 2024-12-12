@@ -32,10 +32,13 @@ Route::post('person/find', 'App\Http\Controllers\PersonController@search');
 Route::get('person/add', 'App\Http\Controllers\PersonController@add');
 Route::post('person/add', 'App\Http\Controllers\PersonController@create');
 Route::get('person/show/{person}', 'App\Http\Controllers\PersonController@show')->name('person.show');//showアクション(アドレスにid入力で表示)
+Route::get('person/add2', 'App\Http\Controllers\PersonController@add2')->name('person.add2');
+Route::post('person/add2', 'App\Http\Controllers\PersonController@store')->name('person.add2');
+
 Route::get('board', 'App\Http\Controllers\BoardController@index');
 Route::get('board/add', 'App\Http\Controllers\BoardController@add');
-Route::post('board/add', 'App\Http\Controllers\BoardController@create');
-Route::post('person/show/{person}', 'App\Http\Controllers\BoardController@create')->name('person.show');///////
+Route::post('board/add', 'App\Http\Controllers\BoardController@createadd');
+Route::post('person/show/{person}', 'App\Http\Controllers\BoardController@create')->name('person.show');///////投稿ページで新規投稿作成
 Route::get('board/show/{item}', 'App\Http\Controllers\BoardController@show');//showアクション(アドレスにid入力で表示)
 
 require __DIR__ . '/auth.php';
