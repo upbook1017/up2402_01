@@ -58,11 +58,10 @@ class PersonController extends Controller
         $form = $request->all();
         $person->fill($form)->save();
 
-        if (isset($form['boards'])){
-            $board = $form['boards'];
-                $person->boards()->create($board);
-        }
+        $board = $form['boards'];
+        $person->boards()->create($board);
+
         /*$person_id = $form['person_id'];*/
-        return redirect()->route('person.show', ['id' => $person->id]);
+        return redirect()->route('person.show', ['person' => $person->id]);
     }
 }
